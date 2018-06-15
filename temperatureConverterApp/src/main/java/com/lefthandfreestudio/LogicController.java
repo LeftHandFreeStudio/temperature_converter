@@ -14,13 +14,24 @@ public class LogicController
 		boolean endExecution = false;
 		String input = userInput.readLine();
 		if(inputValidator.isInputValid(input)){
-			processValidInput(input);
+			endExecution = processValidInput(input);
 		}else{
-			System.out.println("invalid input!")
+			System.out.println("invalid input!");
 		}
 		return endExecution;
 	}
-	public void processValidInput(String input){
+	public boolean processValidInput(String input){
+		boolean end = false;
+		input = input.toLowerCase();
+		if(input.equals("exit")){
+			end = true;
+		}else if(input.equals("help")){
+			printHelp();
+		}
 		
+		return end;
+	}
+	public void printHelp(){
+			System.out.println("help placeholder");
 	}
 }
