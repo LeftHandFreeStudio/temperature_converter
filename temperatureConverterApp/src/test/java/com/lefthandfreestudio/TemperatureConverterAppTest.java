@@ -1,10 +1,13 @@
 package com.lefthandfreestudio;
 
-import junit.framework.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 public class TemperatureConverterAppTest{
 	
+	@Test
     public void testInputValidatorCommonFailCases(){
-		UserInputValidator inputValidator = new UserInputValidator()
+		UserInputValidator inputValidator = new UserInputValidator();
         assertFalse(inputValidator.isInputValid(""));
         assertFalse(inputValidator.isInputValid(null));
         assertFalse(inputValidator.isInputValid("asdasdddddddddd[o[o[orh[qwourh[noxzc[m"));
@@ -12,8 +15,9 @@ public class TemperatureConverterAppTest{
         assertTrue(inputValidator.isInputValid("K"));
         assertTrue(inputValidator.isInputValid("250C"));
     }
+	@Test
 	public void testInputValidatorConversionInputs(){
-		UserInputValidator inputValidator = new UserInputValidator()
+		UserInputValidator inputValidator = new UserInputValidator();
         assertFalse(inputValidator.isInputValid("20kk"));
         assertFalse(inputValidator.isInputValid("20k 0"));
         assertFalse(inputValidator.isInputValid("2f1c"));

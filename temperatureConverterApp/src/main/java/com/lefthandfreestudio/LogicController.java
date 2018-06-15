@@ -7,12 +7,12 @@ public class LogicController
 	private UserInputValidator inputValidator;
 	private Scanner userInput;
 	public LogicController(){
-		inputValidator = new UserInputValidator()
+		inputValidator = new UserInputValidator();
 		userInput = new Scanner(System.in);
 	}
-	public boolean communicateWithUser(){\
+	public boolean communicateWithUser(){
 		boolean endExecution = false;
-		String input = userInput.readLine();
+		String input = userInput.nextLine();
 		input = input.toLowerCase();
 		if(inputValidator.isInputValid(input)){
 			endExecution = processValidInput(input);
