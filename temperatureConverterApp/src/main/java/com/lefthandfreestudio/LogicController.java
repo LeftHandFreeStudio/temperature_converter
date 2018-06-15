@@ -13,6 +13,7 @@ public class LogicController
 	public boolean communicateWithUser(){\
 		boolean endExecution = false;
 		String input = userInput.readLine();
+		input = input.toLowerCase();
 		if(inputValidator.isInputValid(input)){
 			endExecution = processValidInput(input);
 		}else{
@@ -22,16 +23,20 @@ public class LogicController
 	}
 	public boolean processValidInput(String input){
 		boolean end = false;
-		input = input.toLowerCase();
 		if(input.equals("exit")){
 			end = true;
 		}else if(input.equals("help")){
 			printHelp();
+		}else{
+			processConversion(input);
 		}
 		
 		return end;
 	}
 	public void printHelp(){
 			System.out.println("help placeholder");
+	}
+	public void processConversion(String input){
+		
 	}
 }

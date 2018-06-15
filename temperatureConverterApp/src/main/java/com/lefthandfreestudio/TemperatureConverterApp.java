@@ -6,7 +6,8 @@ public class TemperatureConverterApp
     public static void main( String[] args )
     {
 		LogicController controller = new LogicController();
-        System.out.println( "Enter unit you want to convert from: (for unit types type \"help\")" );
+        System.out.println( "Enter temperature including unit followed by output unit: (for unit types type \"help\")" );
+        System.out.println( "e.g. 20K C -> results in conversion 20 Kelvin to Celsius" );
 		
 		boolean end = false;
 		while(!end){
