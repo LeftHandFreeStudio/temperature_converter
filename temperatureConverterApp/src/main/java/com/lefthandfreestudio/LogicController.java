@@ -10,7 +10,17 @@ public class LogicController
 		inputValidator = new UserInputValidator()
 		userInput = new Scanner(System.in);
 	}
-	public void communicateWithUser(){
-	
+	public boolean communicateWithUser(){\
+		boolean endExecution = false;
+		String input = userInput.readLine();
+		if(inputValidator.isInputValid(input)){
+			processValidInput(input);
+		}else{
+			System.out.println("invalid input!")
+		}
+		return endExecution;
+	}
+	public void processValidInput(String input){
+		
 	}
 }

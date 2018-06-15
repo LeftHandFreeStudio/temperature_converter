@@ -7,8 +7,12 @@ public class TemperatureConverterApp
     {
 		LogicController controller = new LogicController();
         System.out.println( "Enter unit you want to convert from: (for unit types type \"help\")" );
-		while(true){
-			controller.communicateWithUser();
+		
+		boolean end = false;
+		while(!end){
+			end = controller.communicateWithUser();
 		}
+        System.out.println( "Thanks for using great programs from LeftHandFreeStudio!" );
+        System.out.println( "for more visit our website: www.lefthandfreestudio.com" );
     }
 }
